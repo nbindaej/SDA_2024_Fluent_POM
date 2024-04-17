@@ -18,15 +18,14 @@ public class RegisterTest {
 
         RegisterAccountPage rap = new RegisterAccountPage(driver);
         rap
-                .enterFirstName("Norah")
-                .enterlastName("Aziz")
-                .enterEmail("norahAziz@email.com")
-                .enterTelephone("0501199220")
+                .enterFirstName()
+                .enterlastName()
+                .enterEmail()
+                .enterTelephone()
                 .enterPassword("abc123")
                 .confirmPassword("abc123")
                 .clickAgree()
                 .clickContinue()
                 .verifyRegisterSuccessed();
-
     }
 }

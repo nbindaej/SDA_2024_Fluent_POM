@@ -1,10 +1,12 @@
 package pages.Homework;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class RegisterAccountPage {
     WebDriver ldriver;
+    Faker faker = new Faker();
     By firstNameById = By.id("input-firstname");
     By lastNameById = By.id("input-lastname");
     By emailById = By.id("input-email");
@@ -18,23 +20,23 @@ public class RegisterAccountPage {
         ldriver = gdriver;
     }
 
-    public RegisterAccountPage enterFirstName(String firstname){
-        ldriver.findElement(firstNameById).sendKeys(firstname);
+    public RegisterAccountPage enterFirstName(){
+        ldriver.findElement(firstNameById).sendKeys(faker.name().firstName());
         return this;
     }
 
-    public RegisterAccountPage enterlastName(String lastname){
-        ldriver.findElement(lastNameById).sendKeys(lastname);
+    public RegisterAccountPage enterlastName(){
+        ldriver.findElement(lastNameById).sendKeys(faker.name().lastName());
         return this;
     }
 
-    public RegisterAccountPage enterEmail (String email){
-        ldriver.findElement(emailById).sendKeys(email);
+    public RegisterAccountPage enterEmail (){
+        ldriver.findElement(emailById).sendKeys(faker.internet().emailAddress());
         return this;
     }
 
-    public RegisterAccountPage enterTelephone(String phoneNum){
-        ldriver.findElement(telephoneById).sendKeys(phoneNum);
+    public RegisterAccountPage enterTelephone(){
+        ldriver.findElement(telephoneById).sendKeys(faker.phoneNumber().cellPhone());
         return this;
     }
 

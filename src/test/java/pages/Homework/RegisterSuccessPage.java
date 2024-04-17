@@ -17,4 +17,5 @@ public class RegisterSuccessPage {
         WebElement message = ldriver.findElement(successMessage);
         Assert.assertTrue(message.isDisplayed());
     }
+
 }
